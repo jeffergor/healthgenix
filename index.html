@@ -3,160 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatito</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-
-        #chatbox {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-
-        .user-message {
-            text-align: right;
-            color: #007bff;
-        }
-
-        .bot-message {
-            text-align: left;
-            color: #28a745;
-        }
-
-        #inputPregunta {
-            width: calc(100% - 90px);
-            padding: 10px;
-            margin-right: 10px;
-        }
-
-        #sendButton {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        #sendButton:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Inicio - Plataforma de Detección de Cáncer</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Chatito</h1>
+    <header>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='registro.html'">Sign Up</button>
+        </div>
+        <h1>Plataforma de Detección de Cáncer y Análisis Genético</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="deteccion.html">Detección de Cáncer</a></li>
+                <li><a href="edicion.html">Edición Genética</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bienvenido a la Plataforma</h2>
+        <p>
+            En esta plataforma, proporcionamos herramientas avanzadas de 
+            <strong>detección temprana de cáncer</strong> y 
+            <strong>edición genética</strong> mediante tecnologías innovadoras como 
+            CRISPR. Explora cómo nuestros algoritmos y análisis genéticos pueden ayudarte a transformar la medicina personalizada.
+        </p>
+
+        <div class="cta">
+            <button onclick="window.location.href='deteccion.html'">Aprender más sobre Detección de Cáncer</button>
+            <button onclick="window.location.href='edicion.html'">Explorar Edición Genética</button>
+        </div>
+    </section>
+    <section id="genetic-animations">
+        <h2>Animaciones Interactivas sobre Genética</h2>
+        <div class="animation-container">
+            <div class="animation-card">
+                <h3>ADN</h3>
+                <div class="dna-animation">
+                    <!-- Aquí irá la animación del ADN -->
+                </div>
+            </div>
     
-    <div id="chatbox">
-        <!-- Aquí se mostrarán los mensajes -->
-    </div>
+            <div class="animation-card">
+                <h3>ARN</h3>
+                <div class="rna-animation">
+                    <!-- Aquí irá la animación del ARN -->
+                </div>
+            </div>
+    
+            <div class="animation-card">
+                <h3>Edición Genética (CRISPR-Cas9)</h3>
+                <div class="crispr-animation">
+                    <!-- Aquí irá la animación del CRISPR -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>¿Qué ofrecemos?</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <h3>Análisis Predictivo</h3>
+                <p>Utiliza nuestros modelos de IA para predecir posibles mutaciones cancerígenas antes de que se desarrollen.</p>
+            </div>
+            <div class="card">
+                <h3>CRISPR Personalizado</h3>
+                <p>Aplica edición genética a nivel individual con nuestros análisis de precisión basados en tus datos genéticos.</p>
+            </div>
+            <div class="card">
+                <h3>Asesoría Genética</h3>
+                <p>Trabaja junto a especialistas en genética para tomar decisiones informadas sobre tus tratamientos.</p>
+            </div>
+        </div>
+    </section>
 
-    <div>
-        <input type="text" id="inputPregunta" placeholder="Escribe aquí tu pregunta">
-        <button id="sendButton" onclick="enviarPregunta()">Enviar</button>
-    </div>
+    <section id="interactive-area">
+        <h2>Interactúa con Nuestro Simulador</h2>
+        <p>
+            Prueba nuestro simulador interactivo para observar cómo se aplican las tecnologías de detección de cáncer y edición genética en casos reales.
+        </p>
+        <button onclick="window.location.href='simulador.html'">Probar Simulador</button>
+    </section>
 
-    <script>
-
-        // Preguntas y respuestas predefinidas
-        const conversacionSimulada = {
-            "Hola": "¡Hola! Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
-            "hola": "¡Hola! Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
-            "ola": "¡Hola! Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
-            "¿como estas?": "¿Muy bien y tu?",
-            "¿Cuál es tu nombre?": "Soy Chatito, tu asistente virtual y tu como te llamas?",
-            "¿Qué puedes hacer?": "Puedo responder preguntas simples, ayudarte con información y hacer que nuestra conversación sea agradable.",
-            "Dime un chiste": "¡Claro! ¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter.",
-            "¿Cuál es el clima?": "No tengo acceso al clima en este momento, pero generalmente el clima depende de tu ubicación.",
-            "Gracias": "¡De nada! Estoy aquí para ayudarte."
-        };
-
-        // Variable para almacenar el nombre del usuario
-        let nombreUsuario = "";
-
-        // Detectar cuando se presiona "Enter" en el campo de entrada
-        document.getElementById("inputPregunta").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                enviarPregunta();  // Llama a la función de envío
-            }
-        });
-
-        // Función para enviar la pregunta al backend o al chatbot simulado
-        function enviarPregunta() {
-            const pregunta = document.getElementById("inputPregunta").value.trim();
-
-            if (!pregunta) {
-                alert("Por favor, escribe una pregunta.");
-                return;
-            }
-
-            // Mostrar la pregunta del usuario en el chat
-            mostrarMensajeEnChat(pregunta, "user-message");
-
-            // Limpiar el campo de entrada
-            document.getElementById("inputPregunta").value = '';
-
-            // Verificar si el usuario menciona su nombre
-            const nombreMatch = pregunta.match(/me llamo ([a-zA-ZáéíóúÁÉÍÓÚñÑ]+)/i) || pregunta.match(/mi nombre es ([a-zA-ZáéíóúÁÉÍÓÚñÑ]+)/i) || pregunta.match(/soy ([a-zA-ZáéíóúÁÉÍÓÚñÑ]+)/i);
-            if (nombreMatch) {
-                nombreUsuario = nombreMatch[1];
-                mostrarMensajeEnChat(`¡Hola, ${nombreUsuario}! Encantado de conocerte.`, "bot-message");
-                return;
-            }
-
-            // Si ya tenemos el nombre del usuario, añadirlo a las respuestas del chatbot
-            const saludoConNombre = nombreUsuario ? `¡Hola, ${nombreUsuario}! ` : "";
-
-            // Verificar si la pregunta tiene una respuesta simulada en la base de datos local
-            if (conversacionSimulada[pregunta]) {
-                mostrarMensajeEnChat(saludoConNombre + conversacionSimulada[pregunta], "bot-message");
-                return;
-            }
-
-            // Intentar obtener la respuesta del backend
-            fetch('https://6286-35-231-135-87.ngrok-free.app/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: pregunta })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Mostrar la respuesta del chatbot en el chat
-                mostrarMensajeEnChat(data.response, "bot-message");
-            })
-            .catch(error => {
-                console.error("Error al contactar el chatbot:", error);
-                // Si el backend no responde, mostrar una respuesta aleatoria de las ficticias
-                const respuestaFicticia = respuestasFicticias[Math.floor(Math.random() * respuestasFicticias.length)];
-                mostrarMensajeEnChat(respuestaFicticia, "bot-message");
-            });
-        }
-
-        // Función para mostrar mensajes en el chatbox
-        function mostrarMensajeEnChat(mensaje, clase) {
-            const chatbox = document.getElementById("chatbox");
-
-            // Crear un nuevo párrafo para el mensaje
-            const nuevoMensaje = document.createElement("p");
-            nuevoMensaje.className = clase;
-            nuevoMensaje.textContent = mensaje;
-
-            // Agregar el nuevo mensaje al chatbox
-            chatbox.appendChild(nuevoMensaje);
-
-            // Desplazar el chatbox hacia abajo para que el último mensaje sea visible
-            chatbox.scrollTop = chatbox.scrollHeight;
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 Plataforma de Detección de Cáncer y Edición Genética. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

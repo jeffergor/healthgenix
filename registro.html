@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='registro.html'">Sign Up</button>
+        </div>
+        <h1>Registro de Usuario</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="deteccion.html">Detección de Cáncer</a></li>
+                <li><a href="edicion.html">Edición Genética</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="registro">
+        <h2>Crear una Nueva Cuenta</h2>
+        <form>
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
+
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Detección de Cáncer y Edición Genética. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
